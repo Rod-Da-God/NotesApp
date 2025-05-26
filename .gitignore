@@ -1,0 +1,24 @@
+## Игнорировать папку .vs
+.vs/
+
+## Игнорировать папки сборки
+bin/
+obj/
+
+## Игнорировать файлы пользователя
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## Игнорировать временные файлы
+*.tmp
+*.temp
+*.log
+*.vsidx
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc 

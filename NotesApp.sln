@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp", "NotesApp\NotesApp.csproj", "{36B13105-6AB1-4983-B6D0-1CA1984E8FE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0BF989E7-2B17-4B7E-A2F7-2C8F3A677450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthLibrary", "AuthLibrary\AuthLibrary.csproj", "{CD5A43C4-5798-437F-9AEA-951F6999314E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36B13105-6AB1-4983-B6D0-1CA1984E8FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B13105-6AB1-4983-B6D0-1CA1984E8FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B13105-6AB1-4983-B6D0-1CA1984E8FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B13105-6AB1-4983-B6D0-1CA1984E8FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BF989E7-2B17-4B7E-A2F7-2C8F3A677450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BF989E7-2B17-4B7E-A2F7-2C8F3A677450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BF989E7-2B17-4B7E-A2F7-2C8F3A677450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BF989E7-2B17-4B7E-A2F7-2C8F3A677450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5A43C4-5798-437F-9AEA-951F6999314E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5A43C4-5798-437F-9AEA-951F6999314E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5A43C4-5798-437F-9AEA-951F6999314E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5A43C4-5798-437F-9AEA-951F6999314E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC2D2BC2-CE45-4A25-9486-6F40B784C65F}
+	EndGlobalSection
+EndGlobal
