@@ -10,6 +10,8 @@ obj/
 *.userosscache
 *.suo
 *.userprefs
+*.docx
+*.json
 
 ## Игнорировать временные файлы
 *.tmp
