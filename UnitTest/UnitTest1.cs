@@ -31,7 +31,7 @@ namespace UnitTest
             
             var result = await _authService.RegisterAsync(
                 new User { Username = "testuser_" + System.Guid.NewGuid().ToString()[..8], Role = UserRole.User },
-                "Test"
+                "Test123"
             );
             Assert.IsTrue(result);
         }
@@ -56,6 +56,85 @@ namespace UnitTest
 
             Assert.IsNull(result);
         }
+
+        [TestMethod]
+        public async Task Login_ValidCredentials_ReturnsUser()
+        {
+            var username = "testuser_" + Guid.NewGuid().ToString()[..8];
+            var password = "CorrectPass123";
+            await _authService.RegisterAsync(
+                new User { Username = username, Role = UserRole.User },
+                password
+            );
+            var user = await _authService.LoginAsync(username, password);
+            Assert.IsNotNull(user);
+            Assert.AreEqual(username, user.Username);
+        }
+
+        [TestMethod]
+        public async Task Register_EmptyUsername_ThrowsException()
+        {
+            var result = await _authService.RegisterAsync(
+                    new User { Username = "", Role = UserRole.User },
+                    "some"
+                );
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public async Task Register_EmptyPassword_ThrowsException()
+        {
+            var username = "testuser_" + Guid.NewGuid().ToString()[..8];
+
+            var result =  await _authService.RegisterAsync(
+                    new User { Username = username, Role = UserRole.User },
+                    ""
+                );
+            Assert.IsFalse(result);
+           
+        }
+
+        [TestMethod]
+        public async Task Register_PasswordWithSpacesOnly_ReturnsFalse()
+        {
+            var username = "testuser_" + Guid.NewGuid().ToString()[..8];
+            var result = await _authService.RegisterAsync(
+                new User { Username = username, Role = UserRole.User },
+                "      "
+            );
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public async Task Register_DuplicateUsername_ReturnsFalse()
+        {
+            var username = "testuser_" + Guid.NewGuid().ToString()[..8];
+
+            await _authService.RegisterAsync(
+                new User { Username = username, Role = UserRole.User },
+                "some1"
+            );
+
+            var result = await _authService.RegisterAsync(
+                new User { Username = username, Role = UserRole.User },
+                "some2"
+            );
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public async Task Register_ShortPassword_ReturnsFalse()
+        {
+            var username = "testuser_" + Guid.NewGuid().ToString()[..8];
+            var result = await _authService.RegisterAsync(
+                new User { Username = username, Role = UserRole.User },
+                "123"
+            );
+            Assert.IsFalse(result);
+        }
+
+
 
     }
 }

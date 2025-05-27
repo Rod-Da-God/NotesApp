@@ -25,6 +25,10 @@ namespace AuthLibrary
 
         public async Task<bool> RegisterAsync(User user, string password)
         {
+            if (string.IsNullOrWhiteSpace(password) || password.Length < 6)
+            {
+                return false;
+            }
             try
             {
                 user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
