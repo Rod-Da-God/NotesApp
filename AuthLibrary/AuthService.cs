@@ -8,7 +8,7 @@ namespace AuthLibrary
     public class AuthService
     {
         private readonly UserRepo _userRepo;
-
+        
         public AuthService(UserRepo userRepo)
         {
             _userRepo = userRepo;
